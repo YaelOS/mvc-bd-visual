@@ -5,6 +5,10 @@
  */
 package mvc_bdvisual;
 
+import Controlador.ControladorMDB;
+import pkgModelo.MDB;
+import vista.FrmUsuarios;
+
 /**
  *
  * @author 980013684
@@ -15,7 +19,13 @@ public class MVC_BDVisual {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        // TODO code application logic here
+        MDB objModelo=new MDB();
+        
+        FrmUsuarios objVista=new FrmUsuarios();
+        ControladorMDB objController;
+        objController = new ControladorMDB(objVista,objModelo);
+        objController.iniciar();
+        objVista.setVisible(true);
     }
     
 }
